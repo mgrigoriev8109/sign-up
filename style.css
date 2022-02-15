@@ -61,26 +61,22 @@ body {
   display: flex;
 }
 
-img {
-  max-width:100%;
-}
-
-.left {
+.image-container {
   flex: 1 1 0%;
   position: relative;
-  width: 100%;
+  width: max(350px, 100%);
 }
 
 .background-image {
   position: absolute;
-  width: 100%;
+  width: max(350px, 100%);
 }
 
-.logo {
+.logo-container {
   margin-top: 7em;
   position: absolute;
   display: flex;
-  width: 100%;
+  width: max(350px, 100%);
   background-color: rgba(255,255,255,0.5);
   align-items: center;
   justify-content: center;
@@ -95,6 +91,34 @@ img {
   font-family: norse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.right {
+.content-container {
   flex: 2 1 0%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.content-container > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid red 2px;
+}
+
+:root {
+  --header: 20%;
+  --footer: 20%;
+  --main: calc(100% - calc(var(--header) + var(--footer)));
+}
+
+#header {
+  height: var(--header);
+}
+
+#main {
+  height: var(--main);
+}
+
+#footer {
+  height: var(--footer);
 }
