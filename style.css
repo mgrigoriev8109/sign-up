@@ -63,13 +63,16 @@ body {
 
 .image-container {
   flex: 1 1 0%;
+  display: flex;
   position: relative;
   width: max(350px, 100%);
+  min-height: 100%;
 }
 
 .background-image {
   position: absolute;
   width: max(350px, 100%);
+  min-height: 100%;
 }
 
 .logo-container {
@@ -102,17 +105,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid red 2px;
 }
 
 :root {
   --header: 20%;
   --footer: 20%;
   --main: calc(100% - calc(var(--header) + var(--footer)));
+  --content-background: WhiteSmoke;
+  --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
 }
 
 #header {
   height: var(--header);
+  background-color: var(--content-background);
+  display: flex;
+  flex-direction: column;
 }
 
 #main {
@@ -121,4 +129,20 @@ body {
 
 #footer {
   height: var(--footer);
+  background-color: var(--content-background);
 }
+
+h1 {
+  font-size: 1rem;
+  font-family: var(--system-font);
+}
+
+h1:first-child{
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  font-family: var(--system-font);
+}
+
